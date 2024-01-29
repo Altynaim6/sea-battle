@@ -3,6 +3,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    public static Map<String, Integer> playerScores = new HashMap();
+}
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -430,5 +432,20 @@ public class Main {
             }
             return true;
 
+        }
+        public static void displayTopPlayers() {
+            System.out.println("Top 10 Players:");
+
+            List<Map.Entry<String, Integer>> sortedPlayers = new ArrayList<>(playerScores.entrySet());
+            sortedPlayers.sort((entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+
+            int count = 0;
+            for (Map.Entry<String, Integer> entry : sortedPlayers) {
+                count++;
+                System.out.println(count + ". " + entry.getKey() + " - Shots: " + entry.getValue());
+                if (count == 10) {
+                    break;
+                }
+            }
         }
 }
