@@ -34,6 +34,29 @@ public class Main {
         placeShip(field, 1);
         placeShip(field, 1);
 
+
+    }
+    public static void displayField(String[][] printField, Integer[][] field) {
+        System.out.println("   1  2  3  4  5  6  7");
+        for (int i = 0; i < 7; i++) {
+            System.out.print((i + 1) + "|");
+            for (int j = 0; j < 7; j++) {
+                printField[i][j] = " ≋ ";
+                System.out.print(printField[i][j]);
+                System.out.print(field[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    public static void nextField(String[][] printField) {
+        System.out.println("   1  2  3  4  5  6  7");
+        for (int i = 0; i < 7; i++) {
+            System.out.print((i + 1) + "|");
+            for (int j = 0; j < 7; j++) {
+                System.out.print(printField[i][j]);
+            }
+            System.out.println();
+        }
     }
     public static void placeShip(Integer[][] field, int shipSize) {
         Random random = new Random();
