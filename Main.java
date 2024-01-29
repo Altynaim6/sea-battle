@@ -252,4 +252,89 @@ public class Main {
         }
         scanner.close();
     }
+        public static boolean isShipSunk(Integer[][] field, int rowGuess, int colGuess) {
+            if(rowGuess == 0 && colGuess == 0) {
+                for(int i = 0; i < 2; i++) {
+                    for(int j = 0; j < 2; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else if (rowGuess == 6 && colGuess == 6){
+                for(int i = -1; i < 1; i++) {
+                    for(int j = -1; j < 1; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else if(rowGuess == 0 && colGuess == 6) {
+                for(int i = 0; i < 2; i++) {
+                    for(int j = -1; j < 1; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else if (rowGuess == 6 && colGuess == 0) {
+                for(int i = -1; i < 1; i++) {
+                    for(int j = 0; j < 2; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        }
+                        return false;
+                    }
+                }
+            } else if (rowGuess == 0) {
+                for(int i = 0; i < 2; i++) {
+                    for(int j = -1; j < 2; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else if (colGuess == 0) {
+                for(int i = -1; i < 2; i++) {
+                    for(int j = 0; j < 2; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else if (rowGuess == 6) {
+                for(int i = -1; i < 1; i++) {
+                    for(int j = -1; j < 2; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else if (colGuess == 6) {
+                for(int i = -1; i < 2; i++) {
+                    for(int j = -1; j < 1; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            } else {
+                for(int i = -1; i < 2; i++) {
+                    for(int j = -1; j < 2; j++) {
+                        if(field[rowGuess + i][colGuess + j] == 0) {
+                        } else {
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+
+        }
 }
