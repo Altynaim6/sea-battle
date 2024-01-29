@@ -49,7 +49,7 @@ public class Main {
             for (int j = 0; j < 7; j++) {
                 printField[i][j] = " ≋ ";
                 System.out.print(printField[i][j]);
-                System.out.print(field[i][j]);
+//                System.out.print(field[i][j]);
             }
             System.out.println();
         }
